@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ALICE OF A FOREST </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="js/alice.js"></script> 
+    <script src="js/alice_community.js"></script>   
+    <link rel="stylesheet" href="css/alice.css">
+</head>
+<body id="community">
+    <div id="layout">
+        <main>
+            <header>
+                <a href="index.html"><img src="images/logo.png" alt="로고"></a>
+                <ul>
+                    <li>
+                        <a href="index.html" class="mainMenu">HOME</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="mainMenu">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="rooms.html" class="mainMenu">ROOMS</a>
+                    </li>
+                    <li>
+                        <a href="reservation.html" class="mainMenu">RESERVATION</a>
+                    </li>
+                    <li>
+                        <a href="community.html" class="mainMenu">COMMUNITY <b>&#129171;</b></a>
+                        <nav class="subMenu">
+                            <a href="#" aria-expanded="true" aria-controls="notice">공지사항</a>
+                            <a href="#" aria-expanded="false" aria-controls="contect">예약문의</a>
+                            <a href="#" aria-expanded="false" aria-controls="gallery">갤러리</a>
+                            <a href="#" aria-expanded="false" aria-controls="review">여행후기</a>
+                        </nav>
+                    </li>
+                </ul>
+            </header>
+            <section id="community_menu">
+                <div class="benner_img">
+                    <img src="images/community.jpg" alt="community">   
+                </div>
+                <nav>
+                    <button type="button" aria-expanded="true" aria-controls="notice">공지사항</button>
+                    <button type="button" aria-expanded="false" aria-controls="contect">예약문의</button>
+                    <button type="button" aria-expanded="false" aria-controls="gallery">갤러리</button>
+                    <button type="button" aria-expanded="false" aria-controls="review">여행후기</button>
+                </nav>
+                <div>
+                    <section id="notice">
+                        <h4>공지사항</h4>
+                        <div>
+                            <p>Total 3건 1 페이지</p>
+                            <button type="button">글쓰기</button>
+                        </div>    
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>글쓴이</th>
+                                <th>날짜</th>
+                                <th>조회</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="under">펜션 이용객 안내</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>09-06</td>
+                                    <td>3458</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="under">가리산 레포즈 파크 개장</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>08-11</td>
+                                    <td>988</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="under">펜션 갤러리</td>
+                                    <td>펜션지기</td>
+                                    <td>07-18</td>
+                                    <td>929</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="search">
+                            <form action="search.php" method="get">
+                                <select id="searchType" name="searchType">
+                                    <option value="title">제목</option>
+                                    <option value="author">글쓴이</option>
+                                </select>
+                                <input type="text" id="searchKeyword" name="searchKeyword" placeholder="검색어를 입력하세요" />
+                                <button type="button">검색</button>
+                            </form>
+                        </div>    
+                    </section>
+                    <section id="contect" hidden>
+                        <h4>문의게시판</h4>
+                        <div>
+                            <p>Total 11건 1 페이지</p>
+                            <button type="button">글쓰기</button>
+                        </div>    
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>글쓴이</th>
+                                <th>날짜</th>
+                                <th>조회</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>11</td>
+                                    <td class="under">예약확인 문의</td>
+                                    <td>박윤자</td>
+                                    <td>07-18</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td class="under">예약문의</td>
+                                    <td>김병진</td>
+                                    <td>07-11</td>
+                                    <td>22</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td class="under">&#11169; Re : 예약문의</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-11</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td class="under">인원문의</td>
+                                    <td>조윤주</td>
+                                    <td>07-05</td>
+                                    <td>120</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td class="under">&#11169; Re : 인원문의</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-06</td>
+                                    <td>157</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="under">환불규정</td>
+                                    <td>김진호</td>
+                                    <td>07-04</td>
+                                    <td>87</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="under">&#11169; Re : 환불규정</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-04</td>
+                                    <td>65</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="under">예약확인 문의</td>
+                                    <td>김다빈</td>
+                                    <td>06-30</td>
+                                    <td>17</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="under">&#11169; Re : 예약확인 문의</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-01</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="under">예약문의</td>
+                                    <td>김송희</td>
+                                    <td>06-18</td>
+                                    <td>55</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="under">&#11169; Re : 예약문의</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>06-18</td>
+                                    <td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="search">
+                            <form action="search.php" method="get">
+                                <select id="searchType" name="searchType">
+                                    <option value="title">제목</option>
+                                    <option value="author">글쓴이</option>
+                                </select>
+                                <input type="text" id="searchKeyword" name="searchKeyword" placeholder="검색어를 입력하세요" />
+                                <button type="button">검색</button>
+                            </form>
+                        </div>    
+                    </section>
+                    <section id="gallery" hidden> 
+                        <h4>갤러리</h4>
+                        <div>
+                            <p>Total 10건 1 페이지</p>
+                            <button type="button">글쓰기</button> 
+                        </div>
+                        <div id="item_menu">
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery1.jpg" alt="갤러리1">
+                                    </div>
+                                    <h4>펜션내 계곡</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery2.jpg" alt="갤러리2">
+                                    </div>
+                                    <h4>계곡 파라솔</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery3.jpg" alt="갤러리3">
+                                    </div>
+                                    <h4>계곡 물놀이</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery4.jpg" alt="갤러리4">
+                                    </div>
+                                    <h4>몽골 개별바베큐장</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery5.jpg" alt="갤러리5">
+                                    </div>
+                                    <h4>앨리스 텃밭</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery6.jpg" alt="갤러리6">
+                                    </div>
+                                    <h4>앨리스의 가을</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery7.jpg" alt="갤러리7">
+                                    </div>
+                                    <h4>앨리스의 봄</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery8.jpg" alt="갤러리8">
+                                    </div>
+                                    <h4>앨리스 계곡</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery9.jpg" alt="갤러리9">
+                                    </div>
+                                    <h4>낚시</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <div>
+                                        <img src="images/gallery10.jpg" alt="갤러리10">
+                                    </div>
+                                    <h4>앨리스의 여름</h4>
+                                </a>
+                                <a href="#">숲속의앨리스</a>
+                                <span>2024.05.13</span>
+                            </div>
+                        </div>    
+                    </section>
+                    <section id="review" hidden>
+                        <h4>여행후기</h4>
+                        <div>
+                            <p>Total 12건 1 페이지</p>
+                            <button type="button">글쓰기</button>
+                        </div>    
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th>글쓴이</th>
+                                <th>날짜</th>
+                                <th>조회</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>12</td>
+                                    <td class="under">힐링여행후기</td>
+                                    <td>김창도</td>
+                                    <td>07-18</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td>
+                                    <td class="under">&#11169; Re : 힐링여행후기</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-19</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td class="under">잘 쉬다 갑니다.</td>
+                                    <td>BJ</td>
+                                    <td>07-11</td>
+                                    <td>22</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td class="under">&#11169; Re : 잘 쉬다 갑니다.</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-11</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td class="under">숲속의 앨리스</td>
+                                    <td>김지원</td>
+                                    <td>07-05</td>
+                                    <td>120</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td class="under">&#11169; Re : 숲속의 앨리스</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-06</td>
+                                    <td>157</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="under">편히 쉬다 갑니다.</td>
+                                    <td>이명진</td>
+                                    <td>07-04</td>
+                                    <td>87</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="under">&#11169; Re : 편히 쉬다 갑니다.</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-04</td>
+                                    <td>65</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td class="under">감사합니다.</td>
+                                    <td>최명은</td>
+                                    <td>06-30</td>
+                                    <td>17</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="under">&#11169; Re : 감사합니다.</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>07-01</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="under">아들과의 좋은 추억</td>
+                                    <td>박은이</td>
+                                    <td>06-18</td>
+                                    <td>55</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="under">&#11169; Re : 아들과의 좋은 추억</td>
+                                    <td>숲속의앨리스</td>
+                                    <td>06-18</td>
+                                    <td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="search">
+                            <form action="search.php" method="get">
+                                <select id="searchType" name="searchType">
+                                    <option value="title">제목</option>
+                                    <option value="author">글쓴이</option>
+                                </select>
+                                <input type="text" id="searchKeyword" name="searchKeyword" placeholder="검색어를 입력하세요" />
+                                <button type="button">검색</button>
+                            </form>
+                        </div>    
+                    </section>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <a href="tel:+821062797855">010-6279-7855</a>&nbsp;&nbsp;&#44;&nbsp;&nbsp;
+            <a href="tel:+821064402433">010-6440-2433</a>
+            <p>
+                업체명 : 숲속의앨리스  /  주소 : 강원도 홍천군 화촌면 주음치로 288-13 (주음치리 320)  /  계좌번호 : [농협] 351-0716-6681-13 (이진혁)  /  대표자 : 이진혁
+            </p>
+            <p>
+                COPYRIGHT © 숲속의앨리스. ALL RIGHTS RESERVED
+            </p>
+        </footer>
+        <div id="quick">
+            <section>
+                <a href="reservation.html"><img src="images/reservation.png" alt="예약하기"></a>
+                <h4><a href="reservation.html">예약하기</a></h4>           
+            </section>
+            <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"><img src="images/arrow.png" alt="위로이동"></button>
+        </div>
+    </div>
+</body>
+</html>

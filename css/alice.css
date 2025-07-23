@@ -1,0 +1,636 @@
+@charset "utf-8";
+
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+img{max-width: 100%;}
+a{text-decoration: none; color: black;}
+#layout {position: relative; }
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+/******************index******************/
+/*****************HEADER*********************/
+main {
+    height: calc(100% - 120px); display: flex; 
+    align-items: flex-start;
+}
+header a img {
+    width: 70%;
+    margin-top: 10px; margin-bottom: -20px;
+}
+header {
+    width: 250px;
+}
+header a {
+    display: block; text-align: center; margin-top: 20px;
+}
+header ul {
+    margin-top: 50px;
+}
+header li {
+    list-style: none; 
+    position: relative;
+}
+.mainMenu {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.1rem; 
+    font-weight: bold;
+}
+.subMenu {
+    background: white;
+    width: 100%;
+    padding-bottom: 30px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.subMenu a:first-child {
+    margin-top:8px;
+}
+.subMenu a:hover {
+    font-weight: bold;
+}
+header li .subMenu a[aria-expanded="true"] {
+    font-weight: bold;
+}
+li:hover .subMenu, li:focus-within .subMenu {
+  visibility: visible;
+  opacity: 1; 
+}
+
+
+
+
+
+
+/*****************HOME 슬라이드******************/
+#slideArea {
+    width: calc(100% - 250px); overflow: hidden; 
+    position: relative;
+}
+#slideArea h1 {
+    display: none;
+}
+#slide {  
+    position: relative; display: flex; width: 100%; 
+    transition: transform 1s ease;
+}
+#slide a {
+    flex: 0 0 100%; /* 한 장 너비 고정 */
+}
+#slide img {
+  width: 100%; 
+  display: block;
+}
+#slideArea .pos_bar {
+    width:fit-content;
+    position: absolute;
+    margin: 0; padding: 0;
+    left: 50%; transform: translateX(-50%);
+    bottom: 3vh; 
+}
+#slideArea .pos_bar button {
+    width:10px; height:10px; border-radius: 10px;
+    background:#c5c4c4; border:none; margin-right:5px;  
+    transition: width 0.4s;
+}
+#slideArea .pos_bar button.active {
+    width:23px; background:white ;
+}
+
+
+
+
+
+
+/**********************about**********************/
+#greeting {
+    width: calc(100% - 250px);
+}
+#greeting div:nth-child(2){
+    background: #f7f7f7;
+    padding: 50px 40px;
+    text-align: center;
+}
+#greeting h1 {
+    padding-bottom: 20px;
+}
+#greeting p {
+    font-size: 0.9rem;
+    line-height: 190%;
+}
+#greeting .video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    height: 0;
+    overflow: hidden;
+}
+#greeting .video iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+#greeting .video h4 {
+    position: absolute; z-index: 1;
+    left: 50%; transform: translateX(-50%);
+    top: 15px;
+    font-size: 1.2rem;
+    padding: 4px 15px 7px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+}
+
+
+
+
+
+
+
+/*****************ROOMS******************/
+#rooms_menu {
+    width: calc(100% - 250px);
+}
+.benner_img {
+    width: 100%;
+}
+#room_img{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 */
+    gap: 30px 40px; /* 열, 행 간격 */
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+}
+#room_img div {
+    text-align: center;
+}
+#room_img button {
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+#room_img button img {
+    transition: filter 0.5s;
+}
+#room_img  button i.material-symbols-outlined {
+    font-size: 3rem;
+    color: white;
+    position: absolute;
+    top: 35%;
+    left: 46%;
+    display: none;
+}
+#room_img button b {
+    position: absolute;
+    top: 70%;
+    left: 43%;
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: white;
+    display: none;
+}
+
+
+/*****************ROOMS hover******************/
+#room_img button:hover img , #room_img button:focus img {
+    filter: brightness(0.2);    
+}
+#room_img button:hover b , #room_img button:focus b {
+    display: block;
+}
+#room_img button:hover i , #room_img button:focus i {
+    display: block;
+}
+#popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background: rgba(0,0,0, 0.9);
+    cursor: pointer;
+    display: none;
+}
+#popup h3{
+    background: black;
+    color: white;
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 20pt;
+}
+#popup img{
+    display: block;
+    margin: auto;
+    max-width: 70%;
+}
+
+
+
+
+
+
+
+
+
+/******************RESERVATION*****************/
+#reservation_menu {
+    width: calc(100% - 250px);
+}
+.calendar-wrap { max-width: 1000px; margin: 0 auto; text-align: center; }
+.calendar-wrap #ind {
+    display: flex; justify-content: space-between; 
+    border-bottom:1px solid #333; margin: 30px 0 20px; 
+}
+.calendar-wrap h1 {
+    font-size: 0.9rem; float: left;
+}
+.calendar-header { display: flex;   }
+.calendar-header button { 
+    margin-left: 4px;
+    padding: 7px 12px; border: none;
+    font-size: 0.65rem; font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 0.04rem;
+}
+.calendar-header button:hover {
+    text-decoration: underline;
+}
+.calendar-header button:first-child {
+    background: rgba(253, 135, 25, 0.596) ;
+}
+.calendar-header button:last-child{
+    background: rgba(31, 69, 192, 0.829); color: white;
+}
+.calendar-nav { display: flex; justify-content: space-evenly; align-items: center; margin-bottom: 30px; }
+.calendar-nav div strong {
+    font-size: 1.3rem;
+}
+.calendar-nav button {
+    background: white; border-radius: 40px; border: 1px solid #ddd; padding: 8px 13px; 
+    font-size: 1.2rem; cursor: pointer; 
+}
+.calendar-nav button:hover {
+    background: #f2f2f2;
+}
+.calendar-table { width: 100%; border-collapse: collapse; margin-bottom: 50px;}
+.calendar-table thead th {
+    height: 50px; vertical-align: middle !important; 
+}
+.calendar-table th, .calendar-table td { 
+    border: 1px solid #ddd; width: 14.28%; height: 80px; vertical-align: top; position: relative; 
+}
+.calendar-table th { background: #f2f2f2; }
+.calendar-table td span { display: block; font-size: 12px; margin: 2px 0; }
+.calendar-table .unavailable {
+    color: #888; 
+}
+td span .state {
+    padding:0 2px 1px 2px;
+}
+td .summer {
+    color: orange; text-align: right; font-size: 0.5rem; padding-bottom: 3px;
+}
+td span.available, td span.completed , td span.progress {
+    text-align: left;
+}
+td span.available .state {
+  background: green; color: white; 
+}
+td span.completed .state {
+  background: red; color: white;
+}
+td span.progress .state {
+  background: blue; color: white;
+}
+.legend { margin: 10px 0; font-size: 14px; display: flex; }
+.legend li {
+    list-style: none; padding: 0 8px;
+}
+
+
+.list {
+    max-width: 1000px; padding-bottom: 100px; padding-left: 20px;
+    margin: auto;
+}
+.list h4 {
+    border-bottom: 2px solid rgb(248, 161, 0);
+    width: 130px; padding: 10px 0 5px 5px; 
+}
+.list ul {
+    margin-left: 25px; font-size: 0.9rem;
+    line-height: 180%; padding-top: 8px;
+}
+.list ul:first-of-type li:nth-child(-n+2) {
+    font-weight: bold; 
+    font-size: 0.95rem;
+}
+
+.list ul:last-child li {
+    list-style: none;
+    transform: translateX(-17px);
+
+}
+.list ul:last-child li:not(:last-child)::before {
+    content: "-";  
+    margin-right: 8px;
+}
+.list ul:last-child li:last-child {
+    color: red; transform: translateX(-21px);
+}
+
+/*****************COMMUNITY(공통 버튼)******************/
+#community_menu {
+    width: calc(100% - 250px);
+}
+#community_menu nav {
+    display: flex; max-width: 1000px; 
+    margin: auto; margin-top: 20px;
+}
+#community_menu nav button {
+    width: 100%; padding: 10px 0; 
+    background: white;
+    border: 1px solid #ddd;
+}
+#community_menu nav button:not(:last-child){
+    border-right: none;
+}
+#community_menu nav button:hover {
+    background: rgb(1, 70, 1); color: white;
+}
+#community_menu nav button[aria-expanded="true"] {
+    background: rgb(1, 70, 1); color: white;
+}
+
+
+
+/*****************공지사항******************/
+#notice {
+    max-width: 1200px; 
+    margin: auto; padding: 20px 0 40px;
+}
+#notice>div:not(:last-child) {
+    display: flex; justify-content: space-between;
+}
+#notice>div button {
+    padding: 2px 8px; margin-bottom: 8px;
+}
+#notice p {
+    padding: 5px 0 5px;
+    font-size: 0.8rem;
+}
+#notice table{
+    border-collapse: collapse; 
+    width: 100%;
+}
+#notice thead {
+    background: #e9f3e9;
+}
+#notice tbody .under {
+    text-align: left;
+}
+#notice tbody .under:hover {
+    text-decoration: underline; color: #00095c;
+}
+#notice th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+}
+#notice #search {
+    margin-top: 20px; 
+    text-align: center;
+}
+#notice #search button {
+    padding: 0 5px 1px;
+}
+
+/*****************예약문의******************/
+#contect {
+    max-width: 1200px; 
+    margin: auto; padding: 20px 0 40px;
+}
+#contect>div:not(:last-child) {
+    display: flex; justify-content: space-between;
+}
+#contect>div button {
+    padding: 2px 8px; margin-bottom: 8px;
+}
+#contect p {
+    padding: 5px 0 5px;
+    font-size: 0.8rem;
+}
+#contect table{
+    border-collapse: collapse; 
+    width: 100%;
+}
+#contect thead {
+    background: #e9f3e9;
+}
+#contect tbody .under {
+    text-align: left;
+}
+#contect tbody .under:hover {
+    text-decoration: underline; color: #00095c;
+}
+#contect th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+}
+#contect #search {
+    margin-top: 20px; 
+    text-align: center;
+}
+#contect #search button {
+    padding: 0 5px 1px;
+}
+/*****************갤러리******************/
+#gallery{
+    max-width: 1200px; 
+    margin: auto; padding: 20px 0 40px;
+}
+#gallery>div {
+    display: flex; justify-content: space-between;
+}
+#gallery>div button {
+    padding: 2px 8px; margin-bottom: 8px;
+}
+#gallery p {
+    padding: 5px 0 5px;
+    font-size: 0.8rem;
+}
+#gallery #item_menu { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 10px 10px 0 10px;
+}
+#gallery #item_menu .item {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(138, 138, 138, 0.5);
+}
+#gallery #item_menu .item a > div {
+    position: relative;
+    width: 100%;
+    height: 200px; /* 원하는 고정 높이 */
+    overflow: hidden;
+}
+#gallery #item_menu img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+#gallery #item_menu .item a > div:hover img {
+    transform: scale(1.1);
+}
+#gallery #item_menu h4 {
+    padding-top: 5px;
+    font-size: 0.95rem;
+}
+#gallery #item_menu a {
+    font-size: 0.8rem; 
+}
+#gallery #item_menu a:first-of-type:hover {
+    text-decoration: underline;
+}
+#gallery #item_menu span {
+    float: right; font-size: 0.8rem;
+}
+/*****************여행후기******************/
+#review {
+    max-width: 1200px; 
+    margin: auto; padding: 20px 0 40px;
+}
+#review>div:not(:last-child) {
+    display: flex; justify-content: space-between;
+}
+#review>div button {
+    padding: 2px 8px; margin-bottom: 8px;
+}
+#review p {
+    padding: 5px 0 5px;
+    font-size: 0.8rem;
+}
+#review table{
+    border-collapse: collapse; 
+    width: 100%;
+}
+#review thead {
+    background: #e9f3e9;
+}
+#review tbody .under {
+    text-align: left;
+}
+#review tbody .under:hover {
+    text-decoration: underline; color: #00095c;
+}
+#review th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+}
+#review #search {
+    margin-top: 20px; 
+    text-align: center;
+}
+#review #search button {
+    padding: 0 5px 1px;
+}
+
+
+
+
+
+
+
+
+
+
+/*****************FOOTER******************/
+footer {
+    text-align: center;
+    height: 120px; border-top: 1px solid rgba(128, 128, 128, 0.623);
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+footer a {
+    font-size: 1.2rem; 
+    font-weight: bold;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer p{
+    padding-top: 15px;
+}
+footer p:last-child{
+    color: #333;
+}
+
+
+
+/*****************퀵버튼 고정*********************/
+#quick {
+    position: fixed; right:50px; bottom:50px; z-index: 1;
+}
+#quick section {
+    background: rgba(255, 255, 255, 0.8); box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+    padding:10px; border-radius:10px; width: 60px;
+}
+#quick > section > a {    
+    display:block; width:70%; margin:auto; margin-bottom:5px;
+}
+#quick img {display:block; width:100%;}
+#quick h4 a {
+    font-size:0.6rem; 
+    text-decoration: none; color:black;
+    margin-left: 2px;
+}
+#quick hr {
+    border:none;
+    width: 50%; height:1.2pt; background: white;
+    margin:15px auto;
+}
+#quick button {
+    display: block; width:60px;
+    height:40px; border-radius:10px;
+    background: rgba(255, 255, 255, 0.8); border:none;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+    margin:auto; margin-top:15px;
+    color: black;
+    cursor: pointer;
+}
+#quick button img {width:35%; margin:auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
